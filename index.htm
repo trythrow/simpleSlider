@@ -10,21 +10,16 @@
 </head>
 <body>
   <div id="sliders" style="width:1024px; height:365px;">
-    <div class="slide">
-        <img src="http://648290826.r.cdn77.net/wp-content/uploads/2013/02/slider1.jpg"/>
-    </div>
-        <div class="slide">
-        <img src="http://648290826.r.cdn77.net/wp-content/uploads/2013/02/slider3.jpg"/>
-    </div>
-         <div class="slide">
-        <img src="http://648290826.r.cdn77.net/wp-content/uploads/2013/02/slider2.jpg"/>
-    </div> 
-  
+
+      <div class="slide"> <img src="images/1.jpg"/> </div>
+      <div class="slide"> <img src="images/2.jpg"/> </div>
+      <!-- <div class="slide"><h1>Hello World, This is text</h1><p>this is lorem ipsum dummy text</p></div>  -->
+      <div class="slide"> <img src="images/3.jpg"/> </div> 
 </div>
+
   <script type='text/javascript'>
-  // example usage
-$("#sliders").simpleSlider({speed: 1600});
-</script>
+    $("#sliders").simpleSlider({ speed: 500, direction: "up" });
+  </script>
+
 </body>
 </html>
-

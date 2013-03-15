@@ -3,13 +3,14 @@
  * https://github.com/amaroks/simpleSlider
  * Released under the MIT license
  * Date: 2013-3-13
- */
-(function ($) {
+ */ (function ($) {
     $.fn.simpleSlider = function (params) {
         params = $.extend({
             width: $(this).width(),
             height: $(this).height(),
             styleNav: true,
+            navColor: "#555555",
+            direction: "left",
             speed: 300
         }, params);
 
@@ -21,8 +22,21 @@
         // create slider
         $(this).html('<div style="position:absolute;" id="slides-container">' + $(this).html() + '</div>');
         count = $(this).find('.slide').length;
-        slidesWidth = count * params.width;
-        $(this).find('#slides-container').css('width', slidesWidth);
+
+        // check direction
+        if (params.direction === "up") {
+            slidesWidth = params.width;
+            slidesHeigh = count * params.height;
+        } else {
+            slidesWidth = count * params.width;
+            slidesHeigh = params.height;
+        }
+
+
+        $(this).find('#slides-container').css({
+            'width': slidesWidth,
+            'height': slidesHeigh
+        });
 
         // create navs
         $(this).append('<div id="navigation"><span class="slider-nav prev"> Next </span> <span class="slider-nav next">Prev</span></div>');
@@ -49,7 +63,7 @@
 
             $(this).find(".slider-nav").each(function () {
                 $(this).css({
-                    "background-color": "#333",
+                    "background-color":  params.navColor,
                     "cursor": "pointer",
                     "color": "#FFFFFF",
                     "cursor": "pointer",
@@ -68,41 +82,78 @@
 
 
         // some properties
-        left = 0;
+        pix = 0;
 
         // bind events
         $(this).find(".prev").on("click", function () {
 
-            if (left === slidesWidth || left === (slidesWidth - params.width)) {
-                return;
-            }
+            if (params.direction !== "up") {
 
-            left = left + params.width;
-            // slide left
-            slideLeft(left);
+                if (pix === slidesWidth || pix === (slidesWidth - params.width)) {
+                    return;
+                }
+
+                pix = pix + params.width;
+
+                // slide left
+                slideLeft(pix);
+
+            } else {
+
+                // sldie up
+                if (pix === slidesHeigh || pix === (slidesHeigh - params.height)) {
+                    return;
+                }
+
+                pix = pix + params.height;
+
+                // slide left
+                slideUp(pix);
+
+            }
         });
 
         $(this).find(".next").on("click", function () {
-
-            if (left === 0) {
+            if (pix === 0) {
                 return;
             }
 
-            left = left - params.width;
-            // slide left
-            slideLeft(left);
+            if (params.direction !== "up") {
+
+                pix = pix - params.width;
+                // slide left
+                slideLeft(pix);
+
+            } else {
+
+                pix = pix - params.height;
+
+                // slide left
+                slideUp(pix);
+
+            }
 
         });
 
         // allow jQuery chaining
         return this;
 
-        // function to do sliding up/down
+        // function to do sliding left/right
+
         function slideLeft(pixels) {
             $("#slides-container").animate({
                 "left": '-' + pixels + 'px'
             }, params.speed);
         }
+
+        // function to do sliding up/down
+
+        function slideUp(pixels) {
+            $("#slides-container").animate({
+                "top": '-' + pixels + 'px'
+            }, params.speed);
+        }
+
     };
 
 })(jQuery);
