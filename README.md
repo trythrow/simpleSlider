@@ -7,65 +7,30 @@ simple Slider
 - Control Sliding speed
 - easy to Customize with CSS
 
+## Demos ##
+
+- <a target="_blank" href="http://htmlpreview.github.com/?https://github.com/amaroks/simpleSlider/blob/master/index.htm">Slide Right/Left</a>
+- <a target="_blank" href="http://htmlpreview.github.com/?https://github.com/amaroks/simpleSlider/blob/master/updown_demo.htm">Slide Up/Down</a>
+
 How to use
 ============
 
 Slide Right/Left usage example
 -------
-<pre><code>
-<!DOCTYPE html>
-<html>
-<head>
-  <script type='text/javascript' src='http://code.jquery.com/jquery-1.9.1.js'></script>
-  <script type='text/javascript' src='js/jquery.simpleslider.js'></script>
-</head>
-
-<body>
-  <div id="sliders" style="width:1024px; height:365px;">
-      <div class="slide"> <img src="images/1.jpg"/> </div>
-      <div class="slide"> <img src="images/2.jpg"/> </div>
-      <div class="slide"> <img src="images/3.jpg"/> </div> 
-</div>
-
-  <script type='text/javascript'>
-    $("#sliders").simpleSlider();
-  </script>
-
-</body>
-</html>
-</code>
+<pre>
+  $("#sliders").simpleSlider();
 </pre>
 
 Slide Up/Down usage example
 -------
-<pre><code>
-<!DOCTYPE html>
-<html>
-<head>
-  <script type='text/javascript' src='http://code.jquery.com/jquery-1.9.1.js'></script>
-  <script type='text/javascript' src='js/jquery.simpleslider.js'></script>
-</head>
-
-<body>
-  <div id="sliders" style="width:1024px; height:365px;">
-      <div class="slide"> <img src="images/1.jpg"/> </div>
-      <div class="slide"> <img src="images/2.jpg"/> </div>
-      <div class="slide"> <img src="images/3.jpg"/> </div> 
-</div>
-
-  <script type='text/javascript'>
-    $("#sliders").simpleSlider({ direction: "up" });
-  </script>
-
-</body>
-</html>
+<pre>
+  $("#sliders").simpleSlider({ direction: "up" });
 </pre>
 
 ... You can also control the slider speed:
 <pre>
-$("#sliders").simpleSlider({ speed: 500, direction: "up" });
-</code>
-</pre>
+  $("#sliders").simpleSlider({ speed: 500, direction: "up" });
+  </pre>
 
 Supported browser
 -------
@@ -74,6 +39,7 @@ Tested on Chrome, Safari, Firefox, IE 9.0.
 
 MIT License
 -------
+
 
 Copyright (C) 2013 Ahmad Said
 
