@@ -12,6 +12,7 @@ How to use
 
 Slide Right/Left usage example
 -------
+<pre>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,9 +33,11 @@ Slide Right/Left usage example
 
 </body>
 </html>
+</pre>
 
 Slide Up/Down usage example
 -------
+<pre>
 <!DOCTYPE html>
 <html>
 <head>
@@ -55,11 +58,12 @@ Slide Up/Down usage example
 
 </body>
 </html>
+</pre>
 
 ... You can also control the slider speed:
-
+<pre>
 $("#sliders").simpleSlider({ speed: 500, direction: "up" });
-
+</pre>
 
 Supported browser
 -------
