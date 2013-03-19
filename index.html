@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>SimpleSlider by amaroks</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">SimpleSlider</h1>
+        <p class="header">simple jQuery contents / images slider plugin</p>
+
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/amaroks/simpleSlider/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/amaroks/simpleSlider/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/amaroks/simpleSlider">View On GitHub</a></li>
+        </ul>
+
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/amaroks">amaroks</a></p>
+
+
+      </header>
+      <section>
+        <h1>Features</h1>
+
+<ul>
+<li>Images Slides</li>
+<li>Text / HTML Slides</li>
+<li>Videos Slides</li>
+<li>Slides Right/Left</li>
+<li>Slides Up/Down</li>
+<li>Control Speed</li>
+<li>No CSS required</li>
+<li>any slider height/width</li>
+<li>Setup in 1 minute</li>
+</ul><h2>Demo</h2>
+
+<ul>
+<li><a href="http://htmlpreview.github.com/?https://github.com/amaroks/simpleSlider/blob/master/index.htm">Slide Right/Left</a></li>
+<li><a href="http://htmlpreview.github.com/?https://github.com/amaroks/simpleSlider/blob/master/updown_demo.htm">Slide Up/Down</a></li>
+</ul><h2>a complete example</h2>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;simpleSlider - Right/Left Demo&lt;/title&gt;
+  &lt;script type='text/javascript' src='http://code.jquery.com/jquery-1.9.1.js'&gt;&lt;/script&gt;
+  &lt;script type='text/javascript' src='js/jquery.simpleslider.js'&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div id="sliders" style="width:1024px; height:365px;"&gt;
+      &lt;div class="slide"&gt; &lt;img src="images/1.jpg"/&gt; &lt;/div&gt;
+      &lt;div class="slide"&gt; &lt;img src="images/2.jpg"/&gt; &lt;/div&gt;
+      &lt;div class="slide"&gt; &lt;img src="images/3.jpg"/&gt; &lt;/div&gt; 
+  &lt;/div&gt;
+
+  &lt;script type='text/javascript'&gt;
+    $("#sliders").simpleSlider();
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>Change sliding direction from Left/Right to Up/Down</p>
+
+<pre><code>$("#sliders").simpleSlider({direction: "up" });
+</code></pre>
+
+<p>Change sliding direction and change sliding speed (in ms)</p>
+
+<pre><code>$("#sliders").simpleSlider({direction: "up", speed: 300 });
+</code></pre>
+      </section>
+      <footer>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		
+  </body>
+</html>
