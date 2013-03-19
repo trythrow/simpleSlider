@@ -21,15 +21,18 @@
         });
         // create slider
         $(this).html('<div style="position:absolute;" id="slides-container">' + $(this).html() + '</div>');
-        count = $(this).find('.slide').length;
+        var count = $(this).find('.slide').length;
+
+        // this div
+        var thisDiv = $(this).attr("id");
 
         // check direction
         if (params.direction === "up") {
-            slidesWidth = params.width;
-            slidesHeigh = count * params.height;
+            var slidesWidth = params.width;
+            var slidesHeigh = count * params.height;
         } else {
-            slidesWidth = count * params.width;
-            slidesHeigh = params.height;
+            var slidesWidth = count * params.width;
+            var slidesHeigh = params.height;
         }
 
 
@@ -82,7 +85,7 @@
 
 
         // some properties
-        pix = 0;
+        var pix = 0;
 
         // bind events
         $(this).find(".prev").on("click", function () {
@@ -135,25 +138,23 @@
 
         });
 
-        // allow jQuery chaining
-        return this;
-
         // function to do sliding left/right
 
         function slideLeft(pixels) {
-            $("#slides-container").animate({
+            $("#"+thisDiv+" #slides-container").animate({
                 "left": '-' + pixels + 'px'
             }, params.speed);
         }
 
         // function to do sliding up/down
-
         function slideUp(pixels) {
-            $("#slides-container").animate({
+            $("#"+thisDiv+" #slides-container").animate({
                 "top": '-' + pixels + 'px'
             }, params.speed);
         }
 
+        // allow jQuery chaining
+        return this;
     };
 
 })(jQuery);
