@@ -1,45 +1,62 @@
-simple Slider
+simple jQuery content & images slider
 ============
 
+- Setup in less than 1 minute!
 - "Anything" slider (Images, Text, Videos, HTML)
 - Works without any CSS
 - 2 sliding features (Up/Down) or (Left/Right)
 - Control Sliding speed
 - easy to Customize with CSS
 
-## Demos ##
+### Demos ##
 
 - <a target="_blank" href="http://htmlpreview.github.com/?https://github.com/amaroks/simpleSlider/blob/master/index.htm">Slide Right/Left</a>
 - <a target="_blank" href="http://htmlpreview.github.com/?https://github.com/amaroks/simpleSlider/blob/master/updown_demo.htm">Slide Up/Down</a>
 
-How to use
-============
 
-Slide Right/Left usage example
--------
-<pre>
-  $("#sliders").simpleSlider();
-</pre>
+### All together example
 
-Slide Up/Down usage example
--------
-<pre>
+```
+<!DOCTYPE html>
+<html>
+<head>
+  <title>simpleSlider - Right/Left Demo</title>
+  <script type='text/javascript' src='http://code.jquery.com/jquery-1.9.1.js'></script>
+  <script type='text/javascript' src='js/jquery.simpleslider.js'></script>
+</head>
+<body>
+  <div id="sliders" style="width:1024px; height:365px;">
+      <div class="slide"> <img src="images/1.jpg"/> </div>
+      <div class="slide"> <img src="images/2.jpg"/> </div>
+      <div class="slide"> <img src="images/3.jpg"/> </div> 
+  </div>
+  <script type='text/javascript'>
+    $("#sliders").simpleSlider();
+  </script>
+</body>
+</html>
+```
+
+
+###How to use
+
+
+By default the siding directions are Left/Right, Here is a slide Up/Down usage example
+
+```
   $("#sliders").simpleSlider({ direction: "up" });
-</pre>
+```
 
-... You can also control the slider speed:
-<pre>
+You can also control the slider speed:
+```
   $("#sliders").simpleSlider({ speed: 500, direction: "up" });
-  </pre>
+```
 
-Supported browser
--------
+###Supported browser
 
 Tested on Chrome, Safari, Firefox, IE 9.0.
 
-MIT License
--------
-
+###MIT License
 
 Copyright (C) 2013 Ahmad Said
 
