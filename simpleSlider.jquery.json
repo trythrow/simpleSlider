@@ -1,0 +1,38 @@
+{
+    "name": "simpleSlider",
+    "title": "dead simple jQuery content slider",
+    "description": "a jQuery Anything slider, simple and easy to setup and very customizable",
+    "keywords": [
+        "slider",
+        "content",
+        "slideshow",
+        "sliders"
+    ],
+
+    "version": "1.0.0",
+    "author": {
+        "name": "Ahmad Said",
+        "url": "https://github.com/amaroks/simpleSlider"
+    },
+    "maintainers": [
+        {
+            "name": "Ahmad Said",
+            "email": "mody@amaroks.com",
+            "url": "http://amaroks.com"
+        }
+    ],
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://github.com/jquery/jquery-color/blob/2.1.2/MIT-LICENSE.txt"
+        }
+    ],
+
+    "bugs": "https://github.com/amaroks/simpleSlider/issues?state=open",
+    "homepage": "https://github.com/amaroks/simpleSlider",
+    "docs": "https://github.com/amaroks/simpleSlider#readme",
+    "download": "https://github.com/amaroks/simpleSlider",
+    "dependencies": {
+        "jquery": ">=1.5"
+    }
+}
