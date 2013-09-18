@@ -52,6 +52,16 @@ You can also control the slider speed:
   $("#sliders").simpleSlider({ speed: 500, direction: "up" });
 ```
 
+Example of continuous scroll (by setting the navigation parameter to false):
+```
+  $("#sliders").simpleSlider({ navigation: false });
+```
+
+You can also set the interval of the scroll event:
+```
+  $("#sliders").simpleSlider({ navigation: false,  interval: 1500});
+```
+
 ###Supported browser
 
 Tested on Chrome, Safari, Firefox, IE 9.0.

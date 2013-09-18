@@ -11,8 +11,13 @@
             styleNav: true,
             navColor: "#555555",
             direction: "left",
-            speed: 300
+            speed: 300,
+            interval: 2000,
+            navigation: true
         }, params);
+        
+        if(params.navigation == false)
+            params.styleNav = false;
 
         // add some css
         $(this).css({
@@ -41,15 +46,18 @@
             'height': slidesHeigh
         });
 
-        // create navs
-        $(this).append('<div id="navigation"><span class="slider-nav prev"> Next </span> <span class="slider-nav next">Prev</span></div>');
+        
+        if(params.navigation == true){
+            // create navs
+            $(this).append('<div id="navigation"><span class="slider-nav prev"> Next </span> <span class="slider-nav next">Prev</span></div>');
 
-        // some css to navigation
-        $(this).find("#navigation").css({
-            "position": "absolute",
-            "top": "46%",
-            "width": "100%",
-        });
+            // some css to navigation
+            $(this).find("#navigation").css({
+                "position": "absolute",
+                "top": "46%",
+                "width": "100%",
+            });
+        }
 
         // some styles to slider items
         $(this).find(".slide").each(function () {
@@ -88,55 +96,90 @@
         var pix = 0;
 
         // bind events
-        $(this).find(".prev").on("click", function () {
+        if(params.navigation == true){
+            $(this).find(".prev").on("click", function () {
 
-            if (params.direction !== "up") {
+                if (params.direction !== "up") {
 
-                if (pix === slidesWidth || pix === (slidesWidth - params.width)) {
+                    if (pix === slidesWidth || pix === (slidesWidth - params.width)) {
+                        return;
+                    }
+
+                    pix = pix + params.width;
+
+                        // slide left
+                        slideLeft(pix);
+
+                    } else {
+
+                        // sldie up
+                        if (pix === slidesHeigh || pix === (slidesHeigh - params.height)) {
+                            return;
+                        }
+
+                        pix = pix + params.height;
+
+                        // slide left
+                        slideUp(pix);
+
+                    }
+                });
+
+            $(this).find(".next").on("click", function () {
+                console.log(pix);
+                if (pix === 0) {
                     return;
                 }
 
-                pix = pix + params.width;
+                if (params.direction !== "up") {
 
-                // slide left
-                slideLeft(pix);
+                    pix = pix - params.width;
+                        // slide left
+                        slideLeft(pix);
 
-            } else {
+                    } else {
 
-                // sldie up
-                if (pix === slidesHeigh || pix === (slidesHeigh - params.height)) {
-                    return;
-                }
+                        pix = pix - params.height;
 
-                pix = pix + params.height;
+                        // slide left
+                        slideUp(pix);
 
-                // slide left
-                slideUp(pix);
+                    }
 
-            }
-        });
+                });
+        }
+        else{
+            setInterval(function(){
+                if (params.direction !== "up") {
 
-        $(this).find(".next").on("click", function () {
-            if (pix === 0) {
-                return;
-            }
+                    if (pix === slidesWidth || pix === (slidesWidth - params.width)) {
+                        pix = 0; //resets the slider when it reaches the last element
+                        slideLeft(pix);
+                        return;
+                    }
 
-            if (params.direction !== "up") {
+                    pix = pix + params.width;
 
-                pix = pix - params.width;
-                // slide left
-                slideLeft(pix);
+                        // slide left
+                        slideLeft(pix);
 
-            } else {
+                    } else {
 
-                pix = pix - params.height;
+                        // sldie up
+                        if (pix === slidesHeigh || pix === (slidesHeigh - params.height)) {
+                            pix = 0; //resets the slider when it reaches the last element
+                            slideUp(pix);
+                            return;
+                        }
 
-                // slide left
-                slideUp(pix);
+                        pix = pix + params.height;
 
-            }
+                        // slide left
+                        slideUp(pix);
 
-        });
+                    }
+            }, params.interval);
+        }
 
         // function to do sliding left/right
 
