@@ -126,7 +126,6 @@
                 });
 
             $(this).find(".next").on("click", function () {
-                console.log(pix);
                 if (pix === 0) {
                     return;
                 }
